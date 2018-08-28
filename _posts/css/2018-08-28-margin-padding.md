@@ -21,6 +21,6 @@ Margin doesn't affect size of the box, but it affects other content interacting 
 
 | | margin | padding |
 |---|---|---|
-| Space | outside the element | inside the element |
-| background-color/image, click region | not included | included |
-| Vertical values | auto collapse<br><br>paragraph of margin-top: 15px & margin-bottom: 20px. There will only be a total space of 20px between the two paragraphs. | doesn't auto collapse<br><br>paragraph of padding-top: 15px & padding-bottom: 20px. There will be a total space of 35px between the two paragraphs. |
+| **Space** | outside the element | inside the element |
+| **background-color/image, click region** | not included | included |
+| **Vertical values** | auto collapse<br><br>paragraph of **margin-top: 15px** & **margin-bottom: 20px**. There will only be a **total space of 20px** between the two paragraphs. | doesn't auto collapse<br><br>paragraph of **padding-top: 15px & padding-bottom: 20px**. There will be a **total space of 35px** between the two paragraphs. |
