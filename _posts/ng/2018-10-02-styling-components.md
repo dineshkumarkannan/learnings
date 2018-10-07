@@ -4,7 +4,7 @@ date:   2018-10-02 17:23:00 +0530
 categories: ng
 ---
 
-# Using **[ngStyle]**:
+## Using **[ngStyle]**:
 
   ```html
   ...
@@ -12,7 +12,7 @@ categories: ng
   ...
   ```
 
-# Using **[class]**:
+## Using **[class]**:
 
   ```html
   ...
@@ -20,7 +20,7 @@ categories: ng
   ...
   ```
 
-# Using **[ngClass]**:
+## Using **[ngClass]**:
 
   ```html
   ...
