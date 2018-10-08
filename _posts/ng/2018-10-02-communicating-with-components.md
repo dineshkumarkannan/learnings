@@ -4,7 +4,7 @@ date:   2018-10-02 15:51:00 +0530
 categories: ng
 ---
 
-# Communicating with Child component
+## Communicating with Child component
 
   - Using **@Input()**:
 
@@ -44,7 +44,7 @@ categories: ng
     ...
     ```
 
-# Communicating with Parent component
+## Communicating with Parent component
 
   - Using **@Output()**:
 

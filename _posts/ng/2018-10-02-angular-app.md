@@ -4,7 +4,7 @@ date:   2018-10-02 16:43:00 +0530
 categories: ng
 ---
 
-# App module:
+## App module:
 
   ```js
   /**
@@ -35,7 +35,7 @@ categories: ng
   export class AppModule { }
   ```
 
-# Component:
+## Component:
 
   ```js
   /**

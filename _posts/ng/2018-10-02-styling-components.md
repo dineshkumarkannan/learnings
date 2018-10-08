@@ -4,30 +4,64 @@ date:   2018-10-02 17:23:00 +0530
 categories: ng
 ---
 
-# Using **[ngStyle]**:
+## Using **[style]**:
 
   ```html
   ...
-  <div [ngStyle]="{ 'color': red }"></div>
+  <div [style.color]="{ booleanExp ? 'red': 'green' }"></div>
   ...
   ```
 
-# Using **[class]**:
+## Using **[ngStyle]**:
 
   ```html
   ...
-  <div [class.class-1]="booleanParam" [class.class-2]="funcReturningBoolean()"></div>
+  <div [ngStyle]="{ 'color': red }">...</div>
+  ...
+  <h2 [ngStyle]="getStyles()">...</h2>
   ...
   ```
 
-# Using **[ngClass]**:
+  ```js
+  ...
+  getStyles() {
+    ...
+    return { color: 'red', fontWeight: 'bold', 'background-color': 'grey' };
+  }
+  ...
+  ```
+
+## Using **[class]**:
+
+  ```html
+  ...
+  <div
+    [class.class-1]="booleanParam"
+    [class.class-2]="funcReturningBoolean()"
+    [class.class-3]="booleanExp">...</div>
+  ...
+  ```
+
+## Using **[ngClass]**:
 
   ```html
   ...
   <div [ngClass]="{
       'class-1': booleanParam,
       'class-2 class-3': funcReturningBoolean()
-      }">
-  </div>
+      }">...</div>
+  ...
+  <h2 [ngClass]="getClass()">...</h2>
+  ...
+  ```
+
+  ```js
+  ...
+  getClass() {
+    ...
+    return ['class-1', 'class-2'];
+    // or
+    return { 'class-1': booleanParam, 'class-2': booleanExp };
+  }
   ...
   ```
