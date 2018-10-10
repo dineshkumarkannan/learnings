@@ -4,68 +4,75 @@ date:   2018-10-02 16:43:00 +0530
 categories: ng
 ---
 
-## App module:
+## App module
 
-  ```js
-  /**
-   *  app.module.ts
-   */
-  import { NgModule } from '@angular/core';
-  ...
-  @NgModule({
-      imports: [
-        // modules
-        // components
-      ],
-      declarations: [
-        // dirctives
-        // pipes
-      ],
-      providers: [
-        // services
-      ],
-      exports: [
-        // component
-      ],
-      bootstrap: [
-        // root component
-      ]
-  })
+```js
+/**
+ *  app.module.ts
+ */
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+...
 
-  export class AppModule { }
-  ```
+@NgModule({
+    imports: [
+      // modules
+      BrowserModule,
+      ...,
+      RouterModule.forRoot(APP_ROUTES)
+    ],
+    declarations: [
+      // components
+      // directives
+      // pipes
+    ],
+    providers: [
+      // services
+    ],
+    exports: [
+      // component
+    ],
+    bootstrap: [
+      // root component
+    ]
+})
 
-## Component:
+export class AppModule { }
+```
 
-  ```js
-  /**
-   *  some.component.ts
-   */
-  import { Component } from '@angular/core';
-  ...
-  @Component({
-      selector: 'app-some-component',
+## Component
 
-      /** including component template */
-      templateUrl: `
-        // path to external template
-      `,
-      /** or */
-      template: `
-        // inline template
-      `,
+```js
+/**
+ *  some.component.ts
+ */
+import { Component } from '@angular/core';
+...
 
-      /** including component styles */
-      styleUrls: [
-        // paths to external stylesheets
-      ],
-      /** or */
-      styles: [
-        // array of inline styles
-      ]
-  })
-  
-  export class SomeComponent {
-      ...
-  }
-  ```
+@Component({
+    selector: 'app-some-component',
+
+    /** including component template */
+    templateUrl: `
+      // path to external template
+    `,
+    /** or */
+    template: `
+      // inline template
+    `,
+
+    /** including component styles */
+    styleUrls: [
+      // paths to external stylesheets
+    ],
+    /** or */
+    styles: [
+      // array of inline styles
+    ]
+})
+
+export class SomeComponent {
+    ...
+}
+```
