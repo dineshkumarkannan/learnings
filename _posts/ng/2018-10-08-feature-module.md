@@ -18,7 +18,7 @@ import { RouterModule } from '@angular/router';
 @NgModule({
     imports: [
         CommonModule,
-        ...,
+        ...
         RouterModule.forChild(FEATURE_ROUTES)
     ],
     declarations: [
@@ -36,7 +36,7 @@ export class FeatureModule {}
  */
 ...
 export const APP_ROUTES: Routes = [
-    ...,
+    ...
     { path: 'feature', loadChildren: './feature/feature.module#FeatureModule' }
 ];
 ```

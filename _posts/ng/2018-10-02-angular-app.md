@@ -4,6 +4,87 @@ date:   2018-10-02 16:43:00 +0530
 categories: ng
 ---
 
+## Bootstrapping Angular app
+
+1. angular.json
+
+    ```js
+    ...
+      "index": "src/index.html",
+      "main": "src/main.ts",
+    ...
+    ```
+
+2. main.ts
+
+    ```js
+    ...
+    import { AppModule } from './app/app.module';
+    ...
+    platformBrowserDynamic().bootstrapModule(AppModule)
+          .catch(err => console.log(err));
+    ```
+
+3. app.module.ts
+
+    ```js
+    ...
+    import { AppComponent } from './app.component';
+    ...
+    @NgModule({
+        ...
+        declarations: [ AppComponent ],
+        bootstrap: [ AppComponent ]
+    })
+
+    export class AppModule { }
+    ```
+
+4. app.component.ts
+
+    ```js
+    ...
+    @Component({
+        selector: 'app-root',
+        ...
+    })
+
+    export class AppComponent {
+        ...
+    }
+    ```
+
+5. index.html
+
+    ```html
+    ...
+    <body>
+      <app-root></app-root>
+    </body>
+    ...
+    ```
+
+## Accessing Static files
+
+```js
+/**
+ * angular.json
+ */
+...
+  "assets": [
+    ...
+    "src/assets"
+  ],
+  "styles": [
+    ...
+    "src/styles.scss"
+  ],
+  "scripts": [
+    ...
+  ]
+...
+```
+
 ## App module
 
 ```js
@@ -19,7 +100,7 @@ import { RouterModule } from '@angular/router';
     imports: [
       // modules
       BrowserModule,
-      ...,
+      ...
       RouterModule.forRoot(APP_ROUTES)
     ],
     declarations: [
@@ -29,9 +110,6 @@ import { RouterModule } from '@angular/router';
     ],
     providers: [
       // services
-    ],
-    exports: [
-      // component
     ],
     bootstrap: [
       // root component
