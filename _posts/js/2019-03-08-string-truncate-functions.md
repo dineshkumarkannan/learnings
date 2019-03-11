@@ -1,41 +1,30 @@
 ---
-title:  "String - slice() v substring() v substr()"
+title:  "String - slice(), substring(), substr()"
 date:   2019-03-08 15:12:00 +0530
 categories: js
 ---
 
-## String - slice() v substring() v substr():
+## String - slice() v substring():
 
-- slice(start, end - optional)
-  - char at &lt;end&gt; will not be displayed
+ - char at &lt;end&gt; will not be displayed
+ - &lt;end&gt; is optional
 
-- substring(start, end - optional)
-  - char at &lt;end&gt; will not be displayed
-  - if &lt;start&gt; &gt; &lt;end&gt;, it is interchanged
+| | slice(start, end)	| substring(start, end) |
+|:---|:---:|:---:|
+| start == end | empty string | |
+| end is omitted | extracts characters to the end of the string | |
+| start / end > string.length | string's length will be used instead | |
+| start > end | empty string | swaps two arguments |
+| start = -ve | sets char from the end of string | treated as if it were 0 |
+| end = -ve | Math.max(0, string.length + end) | |
+| start / end = NaN | treated as if it were 0 | |
 
-- substr(start, length)
+## String - substr():
 
-
-string = '0123456789';
-
-| start | end / length | slice(start, end) | substring(start, end) | substr(start, length) |
-|:-----:|:------------:|:-----------------:|:---------------------:|:---------------------:|
-|   1   |       3      |         12        |           12          |          123          |
-|   7   |       3      |                   |          3456         |          789          |
-|   3   |       3      |                   |                       |          345          |
-|   -7  |      -3      |        3456       |                       |                       |
-|   -3  |      -7      |                   |                       |                       |
-|   3   |              |      3456789      |        3456789        |        3456789        |
-|   -3  |              |        789        |       123456789       |          789          |
-|   2   |      100     |      23456789     |        23456789       |        23456789       |
-|  100  |      101     |                   |                       |                       |
-|  NaN  |       8      |      1234567      |        1234567        |        1234567        |
-|   1   |      NaN     |                   |           0           |                       |
-
-
-## Valid / Invalid parameters:
-
-|         |                   slice(start, end)                   |                          substring(start, end)                          |                substr(start, length)               |
-|:-------:|:-----------------------------------------------------:|:-----------------------------------------------------------------------:|:--------------------------------------------------:|
-|  Valid  | start < end / string.length start == NaN & end != NaN | start || end == -ve start == NaN & end != NaN start != NaN & end == NaN | start & length == -ve start == NaN & length != NaN |
-| Invalid | start >= end / string.length  end == NaN              | start && end == -ve start == end start & end == NaN                     | start & end == -ve values length == NaN            |
+| | substr(start, length) |
+|:---|:---:|
+| length - omitted / > string.length | extracts characters to the end of the string |
+| start > string.length | empty string |
+| start / length = -ve | empty string |
+| start = NaN | treated as if it were 0 |
+| length = NaN | empty string |
