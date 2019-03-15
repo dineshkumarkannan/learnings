@@ -6,5 +6,5 @@ categories: js
 
 | == | === |
 |:---:|:---:|
-| checks for value equality **with coercion allowed** | checks for value equality **without allowing coercion**<br><br>=== is often called **strict equality** for this reason |
+| checks for value equality **with coercion** allowed | checks for value equality **without allowing** coercion<br><br>often called **strict equality** for this reason |
 | null == undefined  //true | null === undefined  //false |
