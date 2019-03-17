@@ -4,7 +4,7 @@ date:   2019-03-14 14:50:00 +0530
 categories: js es6
 ---
 
-## null v undefined:
+## null v undefined
 
   || null | undefined |
   |---|---|---|
@@ -31,7 +31,7 @@ categories: js es6
   undefined === null //true
   ```
 
-### Function with default parameters:
+### Function with default parameters
 
   undefined is the only value that can't get explicitly passed in for a default-value parameter
   
